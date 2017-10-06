@@ -9,7 +9,6 @@ AllCops:
     - 'config/**/*.rb'
     - 'db/migrate/**/*.rb'
     - 'db/seeds/**/*.rb'
-    - 'db/table_seeds/**/*.rb'
     - 'db/seeds.rb'
     - 'lib/**/*.rb'
     - 'lib/**/*.rake'
@@ -20,8 +19,6 @@ AllCops:
     - 'Rakefile'
     - 'Brewfile'
   Exclude:
-    - 'db/feed_sources/*'
-    - 'db/feeds/**/*'
     - 'lib/feeds/**/*'
     - 'vendor/**/*'
     - 'spec/fixtures/**/*'
