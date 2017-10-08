@@ -33,10 +33,14 @@ module MasaYelp
     config.api_only = true
 
     # https://github.com/cyu/rack-cors
-    config.middleware.insert_before 0, Rack::Cors do
+    # https://github.com/lynndylanhurley/devise_token_auth#cors
+    config.middleware.use Rack::Cors do
       allow do
         origins "*"
-        resource "*", headers: :any, methods: %i[get post options]
+        resource "*",
+                 headers: :any,
+                 expose: ["access-token", "expiry", "token-type", "uid", "client"],
+                 methods: %i[get post options delete put]
       end
     end
 

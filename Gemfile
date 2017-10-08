@@ -27,8 +27,11 @@ gem "puma", "~> 3.7"
 gem "rack-cors", require: "rack/cors"
 
 gem "faraday"
+gem "devise_token_auth"
+gem "omniauth"
 
 group :development, :test do
+  gem "database_cleaner"
   gem "dotenv-rails"
   gem "factory_girl_rails"
   gem "faker"
@@ -37,6 +40,7 @@ group :development, :test do
   gem "pry-rails"
   gem "pry"
   gem "rspec-rails"
+  gem "shoulda-matchers", git: "https://github.com/thoughtbot/shoulda-matchers.git", branch: "rails-5"
 end
 
 group :development do
