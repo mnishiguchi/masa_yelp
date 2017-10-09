@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   resources :businesses, only: [:index, :show] do
     member do
       resources :reviews, only: [:index], module: :business, as: :business_reviews
+      # Only one like is allowed per post per user.
+      resource :like, only: [:create, :destroy], module: :business, as: :business_like
     end
   end
 

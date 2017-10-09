@@ -74,8 +74,7 @@ Style/BlockDelimiters:
     - 'spec/**/*_spec.rb'
 
 Style/ClassAndModuleChildren:
-  Exclude:
-    - 'app/controllers/api/**/*.rb'
+  Enabled: false
 
 Style/Documentation:
   Enabled: false

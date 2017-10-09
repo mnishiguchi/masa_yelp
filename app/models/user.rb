@@ -10,4 +10,6 @@ class User < ApplicationRecord
   # :omniauthable
 
   include DeviseTokenAuth::Concerns::User
+
+  has_many :business_favorites
 end

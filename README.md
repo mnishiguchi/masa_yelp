@@ -91,3 +91,5 @@ masa-yelp errors
   }
 }
 ```
+
+![](erd.jpg)
