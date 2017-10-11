@@ -7,7 +7,7 @@ module Yelp
     end
 
     def valid?
-      @response[:error]
+      @response[:error].nil?
     end
 
     private
