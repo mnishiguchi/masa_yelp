@@ -25,7 +25,7 @@ LOCATIONS = %w[
 
 namespace :yelp do
   desc "Import yelp and save to a single file in db/feeds/[timestamp] dir"
-  task :import => :environment do
+  task import: :environment do
     import_to_single_file
   end
 end
@@ -35,8 +35,10 @@ private
 def import_to_single_file(locations = LOCATIONS)
   businesses = []
   locations.each do |location|
-    businesses += request(location: location, offset: 0)
-    businesses += request(location: location, offset: 50)
+    businesses += fetch_businesses(location: location, offset: 0)
+    businesses += fetch_businesses(location: location, offset: 50)
+    businesses += fetch_businesses(location: location, offset: 100)
+    businesses += fetch_businesses(location: location, offset: 150)
   end
   businesses.uniq! { |business| business[:id] }
 
@@ -47,21 +49,21 @@ def import_to_single_file(locations = LOCATIONS)
   puts
 end
 
-def import_to_multiple_files(locations = LOCATIONS)
-  locations.each do |location|
-    businesses = []
-    businesses += request(location: location, offset: 0)
-    businesses += request(location: location, offset: 50)
+# def import_to_multiple_files(locations = LOCATIONS)
+#   locations.each do |location|
+#     businesses = []
+#     businesses += fetch_businesses(location: location, offset: 0)
+#     businesses += fetch_businesses(location: location, offset: 50)
+#
+#     output_file = "#{output_dir}/#{location}.yaml"
+#     File.write(output_file, businesses.to_yaml)
+#     puts
+#     puts "#{businesses.size} businesses saved to #{output_file}"
+#     puts
+#   end
+# end
 
-    output_file = "#{output_dir}/#{location}.yaml"
-    File.write(output_file, businesses.to_yaml)
-    puts
-    puts "#{businesses.size} businesses saved to #{output_file}"
-    puts
-  end
-end
-
-def request(location:, offset: 0)
+def fetch_businesses(location:, offset: 0)
   # https://www.yelp.com/developers/documentation/v3/business_search
   params = { location: location,
              offset: offset,

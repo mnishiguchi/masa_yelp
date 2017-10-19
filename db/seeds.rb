@@ -11,5 +11,3 @@ User.create!(
   password: "password",
   confirmed_at: Time.current
 )
-
-Business.create!(yelp_identifier: "bul-washington")

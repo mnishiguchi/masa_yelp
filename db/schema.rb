@@ -26,10 +26,20 @@ ActiveRecord::Schema.define(version: 20171010025729) do
   end
 
   create_table "businesses", force: :cascade do |t|
-    t.string "yelp_identifier"
+    t.string "yelp_uid", null: false
+    t.string "name"
+    t.string "image_url"
+    t.string "url"
+    t.string "rating"
+    t.string "price"
+    t.string "phone"
+    t.string "display_phone"
+    t.jsonb "categories", array: true
+    t.jsonb "coordinates"
+    t.jsonb "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["yelp_identifier"], name: "index_businesses_on_yelp_identifier", unique: true
+    t.index ["yelp_uid"], name: "index_businesses_on_yelp_uid"
   end
 
   create_table "users", force: :cascade do |t|
