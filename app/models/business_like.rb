@@ -1,6 +1,6 @@
 # == Schema Information
 #
-# Table name: business_favorites
+# Table name: business_likes
 #
 #  id          :integer          not null, primary key
 #  business_id :integer          not null
@@ -9,7 +9,7 @@
 #  updated_at  :datetime         not null
 #
 
-class BusinessFavorite < ApplicationRecord
+class BusinessLike < ApplicationRecord
   belongs_to :business
   belongs_to :user
 end

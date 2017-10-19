@@ -17,14 +17,29 @@ end
 
 private
 
+# Create or update a record.
 def upsert_business_record(yelp_business)
-  yelp_uid = yelp_business[:id]
-
-  # Build params from yelp hash.
-  attrs = %i[name image_url categories rating price phone display_phone coordinates location]
-  params = yelp_business.slice(*attrs).merge(yelp_uid: yelp_uid, url: yelp_business[:url].split(/\?/).first)
-
-  # Create or update a record.
-  business = Business.find_or_initialize_by(yelp_uid: yelp_uid)
+  params = build_params(yelp_business)
+  business = Business.find_or_initialize_by(yelp_uid: yelp_business[:id])
   business.update_attributes(params)
+end
+
+# Build params from yelp hash.
+def build_params(yelp_business)
+  yelp_business.
+    slice(:name, :image_url, :rating, :phone, :display_phone).
+    merge(yelp_business[:location]).
+    merge(yelp_business[:coordinates]).
+    merge(
+      yelp_uid: yelp_business[:id],
+      url: yelp_business[:url].split(/\?/).first,
+      price: yelp_business[:price].length,
+      categories: join_categories(yelp_business[:categories]),
+      display_address: yelp_business.dig(:location, :display_address)
+    )
+end
+
+# Join all the category strings into a comma-separated string.
+def join_categories(categories)
+  categories.reduce([]) { |union, category| union | category.values.map(&:downcase) }.join(",")
 end

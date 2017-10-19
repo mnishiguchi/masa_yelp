@@ -1,17 +1,26 @@
 Rails.application.routes.draw do
-  resources :businesses, only: [:index, :show] do
-    member do
-      resources :reviews, only: [:index], module: :business, as: :business_reviews
-      # Only one like is allowed per post per user.
-      resource :like, only: [:create, :destroy], module: :business, as: :business_like
-    end
-  end
-
+  # Authentication
   # https://github.com/lynndylanhurley/devise_token_auth#mounting-routes
   mount_devise_token_auth_for "User", at: "auth"
   as :user do
     # Define routes for User within this block.
   end
 
-  root "businesses#index"
+  # Yelp api wrapper
+  get "yelp" => "yelp#index"
+  get "yelp/:id" => "yelp#show"
+  get "yelp/:id/reviews" => "yelp/reviews#index"
+
+  # Custom api
+  namespace :v1 do
+    resources :businesses, only: [:index, :show] do
+      member do
+        resources :reviews, only: [:index], module: :business, as: :business_reviews
+        # Only one like is allowed per post per user.
+        resource :like, only: [:create, :destroy], module: :business, as: :business_like
+      end
+    end
+  end
+
+  root "v1/businesses#index"
 end

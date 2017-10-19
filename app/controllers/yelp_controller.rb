@@ -1,24 +1,36 @@
-class BusinessesController < ApplicationController
+class YelpController < ApplicationController
+  using ApiConventionRefinements
+
   # https://www.yelp.com/developers/documentation/v3/business_search
   def index
-    request = Yelp::Request.new("businesses", business_params)
+    request = Yelp::Request.new("businesses", yelp_params)
 
-    render json: camelize_keys(request.response),
-           status: request.valid? ? :ok : :unprocessable_entity
+    if request.valid?
+      render json: format_response(request.response), status: :ok
+    else
+      render json: format_response(request.response), status: :unprocessable_entity
+    end
   end
 
   # https://www.yelp.com/developers/documentation/v3/business
   def show
     request = Yelp::Request.new("business", id: params[:id])
 
-    render json: camelize_keys(request.response),
-           status: request.valid? ? :ok : :unprocessable_entity
+    if request.valid?
+      render json: format_response(request.response), status: :ok
+    else
+      render json: format_response(request.response), status: :unprocessable_entity
+    end
   end
 
   private
 
+  def format_response(response)
+    response.camelize_keys
+  end
+
   # https://www.yelp.com/developers/documentation/v3/business_search
-  def business_params
+  def yelp_params
     params.permit(%i[
                     term
                     location

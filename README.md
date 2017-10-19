@@ -22,76 +22,49 @@ touch .env
 
 ## Usage
 
-#### [Search API](https://www.yelp.com/developers/documentation/v3/business_search)
-- `/businesses`
+#### Masa-yelp API
+- Masa's custom yelp API endpoints.
+- Original data is from Yelp APIs.
+
+```
+https://masa-yelp.herokuapp.com/v1/businesses
+https://masa-yelp.herokuapp.com/v1/businesses/bul-washington
+https://masa-yelp.herokuapp.com/v1/businesses/bul-washington/reviews
+```
+
+#### [Yelp Search API](https://www.yelp.com/developers/documentation/v3/business_search)
+- `/yelp`
 - required params: location or a set of latitude and longitude
 - optional params: see [docs](https://www.yelp.com/developers/documentation/v3/business_search)
 
 ```
-https://masa-yelp.herokuapp.com/businesses?location=washingtondc
-https://masa-yelp.herokuapp.com/businesses?latitude=38.8977&longitude=-77.0365
-https://masa-yelp.herokuapp.com/businesses?location=washingtondc&term=sushi
+https://masa-yelp.herokuapp.com/yelp?location=washingtondc
+https://masa-yelp.herokuapp.com/yelp?latitude=38.8977&longitude=-77.0365
+https://masa-yelp.herokuapp.com/yelp?location=washingtondc&term=sushi
 ```
 
-#### [Business API](https://www.yelp.com/developers/documentation/v3/business)
-- `/businesses/:id`
+#### [Yelp Business API](https://www.yelp.com/developers/documentation/v3/business)
+- `/yelp/:id`
 - required params: id
 
 ```
-https://masa-yelp.herokuapp.com/businesses/bul-washington
+https://masa-yelp.herokuapp.com/yelp/bul-washington
 ```
 
-#### [Reviews API](https://www.yelp.com/developers/documentation/v3/business_reviews)
-- `/businesses/:id/reviews`
+#### [Yelp Reviews API](https://www.yelp.com/developers/documentation/v3/business_reviews)
+- `/yelp/:id/reviews`
 - required params: id
 
 ```
-https://masa-yelp.herokuapp.com/businesses/bul-washington/reviews
+https://masa-yelp.herokuapp.com/yelp/bul-washington/reviews
 ```
 
 ## Response JSON format
 - The data content is the same as the fetched from Yelp API.
 - Keys are camel-cased as opposed to the original being snake-cased.
 
-#### Errors
-
-```
-Yelp API errors
-
-{
-  "error": {
-    "code": "LOCATION_MISSING",
-    "description": "You must specify either a location or a latitude and longitude to search."
-  }
-}
-
-{
-  "error: {
-    "code": "NOT_FOUND",
-    "description": "Resource could not be found."
-  }
-}
-
-{
-  "error: {
-    "code": "VALIDATION_ERROR",
-    "description": "Please specify a location or a latitude and longitude"
-  }
-}
-```
-
-```
-masa-yelp errors
-
-{
-  "error": {
-    "code": "MASA_YELP",
-    "description": "Invalid params: must provide supported params"
-  }
-}
-```
-
 ## Authentication
+- Currently only for liking a business.
 - See [devise_token_auth readme](https://github.com/lynndylanhurley/devise_token_auth#usage-tldr) for authentication routes.
 
 #### Sign up

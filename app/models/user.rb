@@ -40,5 +40,5 @@ class User < ApplicationRecord
 
   include DeviseTokenAuth::Concerns::User
 
-  has_many :business_favorites
+  has_many :business_likes
 end

@@ -15,14 +15,14 @@ ActiveRecord::Schema.define(version: 20171010025729) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "business_favorites", force: :cascade do |t|
+  create_table "business_likes", force: :cascade do |t|
     t.bigint "business_id", null: false
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["business_id"], name: "index_business_favorites_on_business_id"
-    t.index ["user_id", "business_id"], name: "index_business_favorites_on_user_id_and_business_id", unique: true
-    t.index ["user_id"], name: "index_business_favorites_on_user_id"
+    t.index ["business_id"], name: "index_business_likes_on_business_id"
+    t.index ["user_id", "business_id"], name: "index_business_likes_on_user_id_and_business_id", unique: true
+    t.index ["user_id"], name: "index_business_likes_on_user_id"
   end
 
   create_table "businesses", force: :cascade do |t|
@@ -30,13 +30,21 @@ ActiveRecord::Schema.define(version: 20171010025729) do
     t.string "name"
     t.string "image_url"
     t.string "url"
-    t.string "rating"
-    t.string "price"
+    t.string "categories"
+    t.decimal "rating"
+    t.integer "price"
+    t.decimal "latitude"
+    t.decimal "longitude"
+    t.string "address1"
+    t.string "address2"
+    t.string "address3"
+    t.string "city"
+    t.string "state"
+    t.string "country"
+    t.string "zip_code"
+    t.string "display_address", default: [], array: true
     t.string "phone"
     t.string "display_phone"
-    t.jsonb "categories", array: true
-    t.jsonb "coordinates"
-    t.jsonb "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["yelp_uid"], name: "index_businesses_on_yelp_uid"
@@ -71,6 +79,6 @@ ActiveRecord::Schema.define(version: 20171010025729) do
     t.index ["uid", "provider"], name: "index_users_on_uid_and_provider", unique: true
   end
 
-  add_foreign_key "business_favorites", "businesses"
-  add_foreign_key "business_favorites", "users"
+  add_foreign_key "business_likes", "businesses"
+  add_foreign_key "business_likes", "users"
 end

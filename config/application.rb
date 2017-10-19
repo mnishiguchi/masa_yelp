@@ -32,18 +32,6 @@ module MasaYelp
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
 
-    # https://github.com/cyu/rack-cors
-    # https://github.com/lynndylanhurley/devise_token_auth#cors
-    config.middleware.use Rack::Cors do
-      allow do
-        origins "*"
-        resource "*",
-                 headers: :any,
-                 expose: ["access-token", "expiry", "token-type", "uid", "client"],
-                 methods: %i[get post options delete put]
-      end
-    end
-
     # http://guides.rubyonrails.org/generators.html
     config.generators do |g|
       g.helper false
