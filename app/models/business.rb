@@ -28,6 +28,7 @@
 
 class Business < ApplicationRecord
   include Surrealist
+  include Geokit::Geocoders
 
   acts_as_mappable default_units: :miles,
                    default_formula: :sphere,
@@ -36,6 +37,7 @@ class Business < ApplicationRecord
                    lng_column_name: :longitude
 
   has_many :business_likes
+  has_many :users, through: :business_likes
 
   json_schema do
     {
@@ -60,6 +62,11 @@ class Business < ApplicationRecord
       display_address: Array
     }
 
+    # ransack matchers
+    # https://github.com/activerecord-hackery/ransack#search-matchers
+    # - e.g. q[yelp_uid_eq] = "bul-washington"
+    #
+    # location-based search
     # https://github.com/geokit/geokit-rails#new-scopes-to-use
     # - within and beyond:    find records within or beyond a certain distance from the origin point
     # - in_range:             find records within a certain distance range from the origin point

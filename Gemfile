@@ -26,11 +26,23 @@ gem "puma", "~> 3.7"
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 gem "rack-cors", require: "rack/cors"
 
-gem "devise_token_auth"
+# HTTP
 gem "faraday"
-gem "geokit-rails"
-gem "omniauth"
+
+# JSON
 gem "surrealist"
+
+# Authentication
+gem "devise_token_auth"
+gem "omniauth"
+
+# Location-based search
+gem "geokit"
+gem "geokit-rails"
+
+# Search filters
+gem "kaminari"
+gem "ransack", github: "activerecord-hackery/ransack"
 
 group :development, :test do
   gem "database_cleaner"

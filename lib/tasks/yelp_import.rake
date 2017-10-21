@@ -35,10 +35,11 @@ private
 def import_to_single_file(locations = LOCATIONS)
   businesses = []
   locations.each do |location|
-    businesses += fetch_businesses(location: location, offset: 0)
-    businesses += fetch_businesses(location: location, offset: 50)
-    businesses += fetch_businesses(location: location, offset: 100)
-    businesses += fetch_businesses(location: location, offset: 150)
+    %w[restaurant asian korean japanese thai vietnamese].each do |term|
+      businesses += fetch_businesses(location: location, term: term, offset: 0)
+      businesses += fetch_businesses(location: location, term: term, offset: 50)
+      businesses += fetch_businesses(location: location, term: term, offset: 100)
+    end
   end
   businesses.uniq! { |business| business[:id] }
 
@@ -63,13 +64,13 @@ end
 #   end
 # end
 
-def fetch_businesses(location:, offset: 0)
+def fetch_businesses(location:, offset: 0, term: "restaurants")
   # https://www.yelp.com/developers/documentation/v3/business_search
   params = { location: location,
              offset: offset,
+             term: term,
              radius: 40_000,
              limit: 50,
-             term: "restaurants",
              price: "1,2,3" }
   Yelp::Request.new("businesses", params).response[:businesses]
 end
