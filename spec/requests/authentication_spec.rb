@@ -1,7 +1,7 @@
 require "rails_helper"
 
 # https://stackoverflow.com/a/32518970/3837223
-RSpec.describe "Authentication", type: :request do
+describe "Authentication", type: :request do
   it "logs a user out" do
     user = User.create!(
       name: "Example User",
@@ -27,7 +27,7 @@ RSpec.describe "Authentication", type: :request do
 
     response_body = JSON.parse(response.body)
     expect(response_body["errors"]).to be_blank
-    expect(response.status).to eq 200
+    expect(response).to have_http_status 200
 
     # user token should be deleted following sign out
     expect(user.reload.tokens.count).to eq 0

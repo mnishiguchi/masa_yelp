@@ -28,7 +28,7 @@
 
 require "rails_helper"
 
-RSpec.describe Business, type: :model do
+describe Business, type: :model do
   it "has valid factory" do
     expect(create(:business)).to be_valid
   end

@@ -1,0 +1,277 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.yelp.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=ZfziXConRDv81b8gfdoynQ&client_secret=m7JVvkRqqGnQY1RMphvEhKzeycBYxb4hXzUEvSxGGYpwrMfsygleJSWmfbSlT1wS&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 359ca5cbd9ef7626
+      X-Proxied:
+      - 10-65-16-77-useast1bprod
+      Content-Length:
+      - '197'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 21 Oct 2017 23:48:18 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17722-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx",
+        "expires_in": 638853948, "token_type": "Bearer"}'
+    http_version: 
+  recorded_at: Sat, 21 Oct 2017 23:48:18 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/riveras-restaurant-springfield/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - f3203926a39a2061
+      X-Proxied:
+      - extlb3-r8-iad1
+      Content-Length:
+      - '1732'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sat, 21 Oct 2017 23:48:19 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17730-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"reviews": [{"url": "https://www.yelp.com/biz/riveras-restaurant-springfield?hrid=EOB4h7hFRGreNnGctklw5w&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "Family Owned\nGreat Service\nGreat Food\nTHE BEST SEAFOOD CEVICHE\nI''ve
+        ever had\nAlong with the Papusas and Beans\nHORCHATA IS TO DIE FOR\nWill be
+        going back real...", "rating": 5, "user": {"image_url": "https://s3-media1.fl.yelpcdn.com/photo/RE8-SCVwY3YCtdMknK9VWQ/o.jpg",
+        "name": "Bridgette W."}, "time_created": "2017-10-17 02:14:32"}, {"url": "https://www.yelp.com/biz/riveras-restaurant-springfield?hrid=s_O3sOleWnv4tl90PiYqyQ&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "Like one of the other reviews said, it''s a hole in the wall but,
+        it''s definitely a place you should check out. This restaurant is located
+        in Springfield...", "rating": 4, "user": {"image_url": "https://s3-media1.fl.yelpcdn.com/photo/vHTo9ZDpHHqUiikMmihSiA/o.jpg",
+        "name": "Richard C."}, "time_created": "2017-10-04 04:55:07"}, {"url": "https://www.yelp.com/biz/riveras-restaurant-springfield?hrid=gJwqmFpSvdEWcZ-UtBF90Q&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "Best lomo saltado!  The best place for it yet.  I''ve tried several
+        other locations and nobody does it better.  Highly recommend!", "rating":
+        5, "user": {"image_url": "https://s3-media2.fl.yelpcdn.com/photo/dLhLnjszOdXVDWkx-tSJSg/o.jpg",
+        "name": "Bruce B."}, "time_created": "2017-09-27 17:52:22"}], "total": 89,
+        "possible_languages": ["en"]}'
+    http_version: 
+  recorded_at: Sat, 21 Oct 2017 23:48:19 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/wolf/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 1aed13648086cbe2
+      X-Proxied:
+      - extlb5-r7-iad1
+      Content-Length:
+      - '102'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 01:26:04 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17720-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "BUSINESS_NOT_FOUND", "description": "The requested
+        business could not be found."}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 01:26:04 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/ratkelehner/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 06ceb1b231bf4f9f
+      X-Proxied:
+      - extlb4-r9-iad1
+      Content-Length:
+      - '102'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 01:26:38 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17733-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "BUSINESS_NOT_FOUND", "description": "The requested
+        business could not be found."}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 01:26:38 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/bul-washington/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 8a09d40778666533
+      X-Proxied:
+      - 10-65-16-77-useast1bprod
+      Content-Length:
+      - '1714'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 01:28:26 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17737-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"reviews": [{"url": "https://www.yelp.com/biz/bul-washington?hrid=qsOSe7ZJVEKcriyWogXfwg&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "A more modern take on a Korean bar in the heart of Adam''s Morgan.\n\nI
+        absolutely love the vibe of this place, from the lighting to the wide variety
+        of people...", "rating": 5, "user": {"image_url": "https://s3-media4.fl.yelpcdn.com/photo/Zv6q8qJupeksWhKaDJBroA/o.jpg",
+        "name": "Cee K."}, "time_created": "2017-10-18 23:01:07"}, {"url": "https://www.yelp.com/biz/bul-washington?hrid=pEbRBBOEs237lqBdy1Vqxg&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "They don''t take reservations on Fridays or Saturdays between 7-9pm.
+        We arrived around 7:45 and there were a couple free tables. By 8 the place
+        was filling...", "rating": 5, "user": {"image_url": "https://s3-media2.fl.yelpcdn.com/photo/rTTTFtVPg8Qa2BoyFJxP1w/o.jpg",
+        "name": "Natalie M."}, "time_created": "2017-10-08 07:52:50"}, {"url": "https://www.yelp.com/biz/bul-washington?hrid=P2vwxnK_eUtmZOHkun3vDQ&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "Overpriced , terrible service \n\nFood nothing  special. \n\nOverpriced    I
+        was there by myself.  Asked for a recommendation.   Was told to order the
+        grilled...", "rating": 1, "user": {"image_url": "https://s3-media3.fl.yelpcdn.com/photo/9mhhI_A0anNd_kdFsClVVw/o.jpg",
+        "name": "Reza I."}, "time_created": "2017-10-01 17:12:11"}], "total": 236,
+        "possible_languages": ["en", "ja"]}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 01:28:26 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,822 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.yelp.com/oauth2/token
+    body:
+      encoding: UTF-8
+      string: client_id=ZfziXConRDv81b8gfdoynQ&client_secret=m7JVvkRqqGnQY1RMphvEhKzeycBYxb4hXzUEvSxGGYpwrMfsygleJSWmfbSlT1wS&grant_type=client_credentials
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 9a16b87e6b87d42e
+      X-Proxied:
+      - extlb4-r9-iad1
+      Content-Length:
+      - '197'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:05:04 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17742-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"access_token": "3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx",
+        "expires_in": 638852942, "token_type": "Bearer"}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:05:04 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?location=Washington,%20DC
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - f22104c9b0dde820
+      X-Proxied:
+      - 10-65-0-51-useast1aprod
+      Content-Length:
+      - '18901'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:05:04 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17721-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "lincoln-memorial-washington-2", "name": "Lincoln
+        Memorial", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/jMgApybamWU7NlPiUiGWiw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/lincoln-memorial-washington-2?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 757, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 5.0, "coordinates": {"latitude": 38.8893459813715,
+        "longitude": -77.0502001422584}, "transactions": [], "location": {"address1":
+        "Lincoln Memorial Cir NW", "address2": "", "address3": "", "city": "Washington,
+        DC", "zip_code": "20002", "country": "US", "state": "DC", "display_address":
+        ["Lincoln Memorial Cir NW", "Washington, DC 20002"]}, "phone": "+12024266841",
+        "display_phone": "(202) 426-6841", "distance": 2969.93638625}, {"id": "calabash-tea-bar-and-cafe-washington",
+        "name": "Calabash Tea Bar & Cafe", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/b8yC5R2dzzIVJmt1v4BPmw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/calabash-tea-bar-and-cafe-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 223, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}, {"alias": "vegetarian", "title": "Vegetarian"}, {"alias": "cafes",
+        "title": "Cafes"}], "rating": 5.0, "coordinates": {"latitude": 38.91509, "longitude":
+        -77.02169}, "transactions": ["pickup", "restaurant_reservation"], "price":
+        "$", "location": {"address1": "1847 7th St NW", "address2": "", "address3":
+        "", "city": "Washington, DC", "zip_code": "20001", "country": "US", "state":
+        "DC", "display_address": ["1847 7th St NW", "Washington, DC 20001"]}, "phone":
+        "+12025255386", "display_phone": "(202) 525-5386", "distance": 884.5713169899999},
+        {"id": "keren-restaurant-washington", "name": "Keren Restaurant", "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/aNeonDxPGL11eXUOcB35vw/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/keren-restaurant-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 789, "categories": [{"alias": "ethiopian", "title": "Ethiopian"},
+        {"alias": "coffee", "title": "Coffee & Tea"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.916715, "longitude": -77.041243}, "transactions": [], "price":
+        "$$", "location": {"address1": "1780 Florida Ave NW", "address2": "", "address3":
+        "", "city": "Washington, DC", "zip_code": "20009", "country": "US", "state":
+        "DC", "display_address": ["1780 Florida Ave NW", "Washington, DC 20009"]},
+        "phone": "+12022655764", "display_phone": "(202) 265-5764", "distance": 1097.8006593559999},
+        {"id": "samis-coffee-kiosk-washington", "name": "Sami''s Coffee Kiosk", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/HxmUpbro4QZgWYyqm59DWQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/samis-coffee-kiosk-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 40, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}], "rating": 5.0, "coordinates": {"latitude": 38.89647, "longitude":
+        -77.04813}, "transactions": [], "price": "$", "location": {"address1": "2121
+        Virginia Ave NW", "address2": "", "address3": "", "city": "Washington, DC",
+        "zip_code": "20037", "country": "US", "state": "DC", "display_address": ["2121
+        Virginia Ave NW", "Washington, DC 20037"]}, "phone": "", "display_phone":
+        "", "distance": 2249.606584828}, {"id": "komi-washington", "name": "Komi",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/C5ejNJevyU_pqGRzS7kVfQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/komi-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 669, "categories": [{"alias": "greek", "title": "Greek"},
+        {"alias": "mediterranean", "title": "Mediterranean"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.91011, "longitude": -77.03819}, "transactions": ["restaurant_reservation"],
+        "price": "$$$$", "location": {"address1": "1509 17th St NW", "address2": null,
+        "address3": "", "city": "Washington, DC", "zip_code": "20036", "country":
+        "US", "state": "DC", "display_address": ["1509 17th St NW", "Washington, DC
+        20036"]}, "phone": "+12023329200", "display_phone": "(202) 332-9200", "distance":
+        663.5519643539999}, {"id": "falafel-inc-washington-9", "name": "Falafel Inc",
+        "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/iKwHPcaJBFKv9nVzawX8NQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/falafel-inc-washington-9?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 146, "categories": [{"alias": "falafel", "title": "Falafel"}],
+        "rating": 5.0, "coordinates": {"latitude": 38.90546, "longitude": -77.06536},
+        "transactions": [], "price": "$", "location": {"address1": "1210 Potomac St
+        NW", "address2": "", "address3": null, "city": "Washington, DC", "zip_code":
+        "20007", "country": "US", "state": "DC", "display_address": ["1210 Potomac
+        St NW", "Washington, DC 20007"]}, "phone": "+12023334265", "display_phone":
+        "(202) 333-4265", "distance": 3072.430261896}, {"id": "un-je-ne-sais-quoi-washington",
+        "name": "Un Je Ne Sais Quoi", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RU2A3Xf_0QcFCz8f4aSLpg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/un-je-ne-sais-quoi-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 344, "categories": [{"alias": "desserts", "title": "Desserts"},
+        {"alias": "cafes", "title": "Cafes"}, {"alias": "bakeries", "title": "Bakeries"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9087384, "longitude": -77.042577},
+        "transactions": [], "price": "$", "location": {"address1": "1361 Connecticut
+        Ave NW", "address2": "", "address3": "", "city": "Washington, DC", "zip_code":
+        "20036", "country": "US", "state": "DC", "display_address": ["1361 Connecticut
+        Ave NW", "Washington, DC 20036"]}, "phone": "+12027210099", "display_phone":
+        "(202) 721-0099", "distance": 1071.483927006}, {"id": "barmini-by-jos\u00e9-andr\u00e9s-washington-4",
+        "name": "Barmini By Jos\u00e9 Andr\u00e9s", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/TTmFFcCK35zopINIUv7E4g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/barmini-by-jos%C3%A9-andr%C3%A9s-washington-4?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 270, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "cocktailbars", "title": "Cocktail Bars"}], "rating": 4.5,
+        "coordinates": {"latitude": 38.8962604, "longitude": -77.0238351}, "transactions":
+        [], "price": "$$$", "location": {"address1": "501 9th St NW", "address2":
+        "", "address3": "", "city": "Washington, DC", "zip_code": "20004", "country":
+        "US", "state": "DC", "display_address": ["501 9th St NW", "Washington, DC
+        20004"]}, "phone": "+12023934451", "display_phone": "(202) 393-4451", "distance":
+        1767.3179642879998}, {"id": "vietnam-veterans-memorial-washington", "name":
+        "Vietnam Veterans Memorial", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/dNXWIvlJYpIqrpnxuiS1JQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/vietnam-veterans-memorial-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 250, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 5.0, "coordinates": {"latitude": 38.8910251787901,
+        "longitude": -77.0476747857971}, "transactions": [], "location": {"address1":
+        "National Mall", "address2": "", "address3": "Henry Bacon Dr and Constitution
+        Ave NW", "city": "Washington, DC", "zip_code": "20050", "country": "US", "state":
+        "DC", "display_address": ["National Mall", "Henry Bacon Dr and Constitution
+        Ave NW", "Washington, DC 20050"]}, "phone": "+12024266841", "display_phone":
+        "(202) 426-6841", "distance": 2693.010493222}, {"id": "and-pizza-washington-15",
+        "name": "&pizza", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/KPCXrBBG23xSpDgrRkicPg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/and-pizza-washington-15?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 396, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "vegan", "title": "Vegan"}, {"alias": "vegetarian", "title": "Vegetarian"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9021415314452, "longitude":
+        -77.0325395030411}, "transactions": [], "price": "$", "location": {"address1":
+        "1400 K St NW", "address2": null, "address3": "", "city": "Washington, DC",
+        "zip_code": "20006", "country": "US", "state": "DC", "display_address": ["1400
+        K St NW", "Washington, DC 20006"]}, "phone": "+12026821503", "display_phone":
+        "(202) 682-1503", "distance": 1030.785971482}, {"id": "national-mall-washington",
+        "name": "National Mall", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7jLO8nuavjWV_B4xpMKH8w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/national-mall-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 295, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 4.5, "coordinates": {"latitude": 38.889552,
+        "longitude": -77.023089}, "transactions": [], "location": {"address1": "Constitution
+        Ave NW", "address2": "", "address3": "", "city": "Washington, DC", "zip_code":
+        "20565", "country": "US", "state": "DC", "display_address": ["Constitution
+        Ave NW", "Washington, DC 20565"]}, "phone": "+12024859880", "display_phone":
+        "(202) 485-9880", "distance": 2504.175204708}, {"id": "service-bar-washington",
+        "name": "Service Bar", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/4nSgDk15bpI-NXXbqeKkZg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/service-bar-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 68, "categories": [{"alias": "cocktailbars", "title": "Cocktail
+        Bars"}], "rating": 4.5, "coordinates": {"latitude": 38.91683, "longitude":
+        -77.02501}, "transactions": [], "price": "$$", "location": {"address1": "928
+        U St NW", "address2": "", "address3": null, "city": "Washington, DC", "zip_code":
+        "20001", "country": "US", "state": "DC", "display_address": ["928 U St NW",
+        "Washington, DC 20001"]}, "phone": "+12024627232", "display_phone": "(202)
+        462-7232", "distance": 783.8611694264}, {"id": "and-pizza-washington-11",
+        "name": "&pizza", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/O1b5PK4I7EieoXpF6ThbxA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/and-pizza-washington-11?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 718, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "vegetarian", "title": "Vegetarian"}, {"alias": "vegan", "title":
+        "Vegan"}], "rating": 4.5, "coordinates": {"latitude": 38.8962649, "longitude":
+        -77.0263866}, "transactions": [], "price": "$", "location": {"address1": "1005
+        E St NW", "address2": null, "address3": "", "city": "Washington, DC", "zip_code":
+        "20004", "country": "US", "state": "DC", "display_address": ["1005 E St NW",
+        "Washington, DC 20004"]}, "phone": "+12023475056", "display_phone": "(202)
+        347-5056", "distance": 1726.29154247}, {"id": "and-pizza-washington", "name":
+        "&pizza", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/SFUaB7-Rnx4kUX3rlmEYXw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/and-pizza-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 548, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "vegetarian", "title": "Vegetarian"}, {"alias": "vegan", "title":
+        "Vegan"}], "rating": 4.5, "coordinates": {"latitude": 38.9168545001574, "longitude":
+        -77.0292457298752}, "transactions": [], "price": "$", "location": {"address1":
+        "1250 U St NW", "address2": null, "address3": "", "city": "Washington, DC",
+        "zip_code": "20009", "country": "US", "state": "DC", "display_address": ["1250
+        U St NW", "Washington, DC 20009"]}, "phone": "+12027331286", "display_phone":
+        "(202) 733-1286", "distance": 630.1332145839999}, {"id": "al-volo-washington",
+        "name": "Al Volo", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/2LmxZB7R1KpGWxrNZiKBcQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/al-volo-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 128, "categories": [{"alias": "italian", "title": "Italian"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9227593768247, "longitude":
+        -77.0424101220775}, "transactions": ["pickup"], "price": "$$", "location":
+        {"address1": "1790 Columbia Rd NW", "address2": "", "address3": null, "city":
+        "Washington, DC", "zip_code": "20009", "country": "US", "state": "DC", "display_address":
+        ["1790 Columbia Rd NW", "Washington, DC 20009"]}, "phone": "+12027580759",
+        "display_phone": "(202) 758-0759", "distance": 1631.89972812}, {"id": "library-of-congress-washington-3",
+        "name": "Library of Congress", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/ZLfYX48eD3gPyHdtnfk1Dg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/library-of-congress-washington-3?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 349, "categories": [{"alias": "libraries", "title": "Libraries"},
+        {"alias": "landmarks", "title": "Landmarks & Historical Buildings"}], "rating":
+        4.5, "coordinates": {"latitude": 38.8887325486836, "longitude": -77.0045020200387},
+        "transactions": [], "location": {"address1": "101 Independence Ave SE", "address2":
+        null, "address3": "", "city": "Washington, DC", "zip_code": "20540", "country":
+        "US", "state": "DC", "display_address": ["101 Independence Ave SE", "Washington,
+        DC 20540"]}, "phone": "+12027075000", "display_phone": "(202) 707-5000", "distance":
+        3377.7499014779996}, {"id": "greek-deli-and-catering-washington", "name":
+        "Greek Deli & Catering", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/s5k9SEf22XFJ4BJRmykwXA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/greek-deli-and-catering-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 462, "categories": [{"alias": "delis", "title": "Delis"},
+        {"alias": "greek", "title": "Greek"}, {"alias": "breakfast_brunch", "title":
+        "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude": 38.904731,
+        "longitude": -77.043876}, "transactions": [], "price": "$", "location": {"address1":
+        "1120 19th St NW", "address2": "", "address3": "", "city": "Washington, DC",
+        "zip_code": "20036", "country": "US", "state": "DC", "display_address": ["1120
+        19th St NW", "Washington, DC 20036"]}, "phone": "+12022962111", "display_phone":
+        "(202) 296-2111", "distance": 1357.986197704}, {"id": "colony-club-washington",
+        "name": "Colony Club", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/qOH80T8Wsa8knjJ631RobA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/colony-club-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 118, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}, {"alias": "cafes", "title": "Cafes"}, {"alias": "bars", "title": "Bars"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9296029509668, "longitude":
+        -77.0235609626942}, "transactions": [], "price": "$", "location": {"address1":
+        "3118 Georgia Ave NW", "address2": "", "address3": "", "city": "Washington,
+        DC", "zip_code": "20010", "country": "US", "state": "DC", "display_address":
+        ["3118 Georgia Ave NW", "Washington, DC 20010"]}, "phone": "+12027227202",
+        "display_phone": "(202) 722-7202", "distance": 2126.1742301779996}, {"id":
+        "a-baked-joint-washington-9", "name": "A Baked Joint", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/yX6ari3CN8gnO8YGjQS-Mg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/a-baked-joint-washington-9?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 890, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}, {"alias": "breakfast_brunch", "title": "Breakfast & Brunch"}, {"alias":
+        "sandwiches", "title": "Sandwiches"}], "rating": 4.5, "coordinates": {"latitude":
+        38.9024108024879, "longitude": -77.0171392790004}, "transactions": [], "price":
+        "$", "location": {"address1": "440 K St NW", "address2": "", "address3": "",
+        "city": "Washington, DC", "zip_code": "20001", "country": "US", "state": "DC",
+        "display_address": ["440 K St NW", "Washington, DC 20001"]}, "phone": "+12024086985",
+        "display_phone": "(202) 408-6985", "distance": 1529.8557273775998}, {"id":
+        "amsterdam-falafelshop-washington-4", "name": "Amsterdam Falafelshop", "image_url":
+        "https://s3-media1.fl.yelpcdn.com/bphoto/jQinDUgIGDqJWZzw4XqKaA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/amsterdam-falafelshop-washington-4?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 1734, "categories": [{"alias": "vegetarian", "title": "Vegetarian"},
+        {"alias": "mideastern", "title": "Middle Eastern"}, {"alias": "falafel", "title":
+        "Falafel"}], "rating": 4.5, "coordinates": {"latitude": 38.921199798584, "longitude":
+        -77.041862487793}, "transactions": ["pickup"], "price": "$", "location": {"address1":
+        "2425 18th St NW", "address2": null, "address3": "", "city": "Washington,
+        DC", "zip_code": "20009", "country": "US", "state": "DC", "display_address":
+        ["2425 18th St NW", "Washington, DC 20009"]}, "phone": "+12022341969", "display_phone":
+        "(202) 234-1969", "distance": 1468.418303834}], "total": 28411, "region":
+        {"center": {"longitude": -77.0306396484, "latitude": 38.9112935732}}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:05:04 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/search?latitude=38.8977&longitude=-77.0365
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 9c88e3101dcdfd0e
+      X-Proxied:
+      - 10-65-0-51-useast1aprod
+      Content-Length:
+      - '19178'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:08:01 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17737-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"businesses": [{"id": "lincoln-memorial-washington-2", "name": "Lincoln
+        Memorial", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/jMgApybamWU7NlPiUiGWiw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/lincoln-memorial-washington-2?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 757, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 5.0, "coordinates": {"latitude": 38.8893459813715,
+        "longitude": -77.0502001422584}, "transactions": [], "location": {"address1":
+        "Lincoln Memorial Cir NW", "address2": "", "address3": "", "city": "Washington,
+        DC", "zip_code": "20002", "country": "US", "state": "DC", "display_address":
+        ["Lincoln Memorial Cir NW", "Washington, DC 20002"]}, "phone": "+12024266841",
+        "display_phone": "(202) 426-6841", "distance": 1506.3906811339998}, {"id":
+        "samis-coffee-kiosk-washington", "name": "Sami''s Coffee Kiosk", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/HxmUpbro4QZgWYyqm59DWQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/samis-coffee-kiosk-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 40, "categories": [{"alias": "coffee", "title": "Coffee &
+        Tea"}], "rating": 5.0, "coordinates": {"latitude": 38.89647, "longitude":
+        -77.04813}, "transactions": [], "price": "$", "location": {"address1": "2121
+        Virginia Ave NW", "address2": "", "address3": "", "city": "Washington, DC",
+        "zip_code": "20037", "country": "US", "state": "DC", "display_address": ["2121
+        Virginia Ave NW", "Washington, DC 20037"]}, "phone": "", "display_phone":
+        "", "distance": 1025.179674658}, {"id": "vietnam-veterans-memorial-washington",
+        "name": "Vietnam Veterans Memorial", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/dNXWIvlJYpIqrpnxuiS1JQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/vietnam-veterans-memorial-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 250, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 5.0, "coordinates": {"latitude": 38.8910251787901,
+        "longitude": -77.0476747857971}, "transactions": [], "location": {"address1":
+        "National Mall", "address2": "", "address3": "Henry Bacon Dr and Constitution
+        Ave NW", "city": "Washington, DC", "zip_code": "20050", "country": "US", "state":
+        "DC", "display_address": ["National Mall", "Henry Bacon Dr and Constitution
+        Ave NW", "Washington, DC 20050"]}, "phone": "+12024266841", "display_phone":
+        "(202) 426-6841", "distance": 1219.2989091939999}, {"id": "barmini-by-jos\u00e9-andr\u00e9s-washington-4",
+        "name": "Barmini By Jos\u00e9 Andr\u00e9s", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/TTmFFcCK35zopINIUv7E4g/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/barmini-by-jos%C3%A9-andr%C3%A9s-washington-4?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 270, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "cocktailbars", "title": "Cocktail Bars"}], "rating": 4.5,
+        "coordinates": {"latitude": 38.8962604, "longitude": -77.0238351}, "transactions":
+        [], "price": "$$$", "location": {"address1": "501 9th St NW", "address2":
+        "", "address3": "", "city": "Washington, DC", "zip_code": "20004", "country":
+        "US", "state": "DC", "display_address": ["501 9th St NW", "Washington, DC
+        20004"]}, "phone": "+12023934451", "display_phone": "(202) 393-4451", "distance":
+        1126.197544123}, {"id": "and-pizza-washington-15", "name": "&pizza", "image_url":
+        "https://s3-media4.fl.yelpcdn.com/bphoto/KPCXrBBG23xSpDgrRkicPg/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/and-pizza-washington-15?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 396, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "vegan", "title": "Vegan"}, {"alias": "vegetarian", "title": "Vegetarian"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9021415314452, "longitude":
+        -77.0325395030411}, "transactions": [], "price": "$", "location": {"address1":
+        "1400 K St NW", "address2": null, "address3": "", "city": "Washington, DC",
+        "zip_code": "20006", "country": "US", "state": "DC", "display_address": ["1400
+        K St NW", "Washington, DC 20006"]}, "phone": "+12026821503", "display_phone":
+        "(202) 682-1503", "distance": 600.991768666}, {"id": "national-world-war-ii-memorial-washington",
+        "name": "National World War II Memorial", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/5VGn8aq9GfW8idP_Rl8doA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/national-world-war-ii-memorial-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 224, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 4.5, "coordinates": {"latitude": 38.8894112303486,
+        "longitude": -77.040503603212}, "transactions": [], "location": {"address1":
+        "17th & Independence Ave SW", "address2": "", "address3": "The National Mall",
+        "city": "Washington, DC", "zip_code": "20050", "country": "US", "state": "DC",
+        "display_address": ["17th & Independence Ave SW", "The National Mall", "Washington,
+        DC 20050"]}, "phone": "+12024266841", "display_phone": "(202) 426-6841", "distance":
+        984.760456822}, {"id": "and-pizza-washington-11", "name": "&pizza", "image_url":
+        "https://s3-media2.fl.yelpcdn.com/bphoto/O1b5PK4I7EieoXpF6ThbxA/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/and-pizza-washington-11?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 718, "categories": [{"alias": "pizza", "title": "Pizza"},
+        {"alias": "vegetarian", "title": "Vegetarian"}, {"alias": "vegan", "title":
+        "Vegan"}], "rating": 4.5, "coordinates": {"latitude": 38.8962649, "longitude":
+        -77.0263866}, "transactions": [], "price": "$", "location": {"address1": "1005
+        E St NW", "address2": null, "address3": "", "city": "Washington, DC", "zip_code":
+        "20004", "country": "US", "state": "DC", "display_address": ["1005 E St NW",
+        "Washington, DC 20004"]}, "phone": "+12023475056", "display_phone": "(202)
+        347-5056", "distance": 894.7065057881999}, {"id": "korean-war-veterans-memorial-washington",
+        "name": "Korean War Veterans Memorial", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/zE2K07_bEHrDdQ-HPGgRcw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/korean-war-veterans-memorial-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 190, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 4.5, "coordinates": {"latitude": 38.888294,
+        "longitude": -77.047724}, "transactions": [], "location": {"address1": "900
+        Ohio Dr SW", "address2": "", "address3": "Lincoln Memorial Circle", "city":
+        "Washington, DC", "zip_code": "20037", "country": "US", "state": "DC", "display_address":
+        ["900 Ohio Dr SW", "Lincoln Memorial Circle", "Washington, DC 20037"]}, "phone":
+        "+12024266841", "display_phone": "(202) 426-6841", "distance": 1427.4224594759999},
+        {"id": "national-mall-washington", "name": "National Mall", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/7jLO8nuavjWV_B4xpMKH8w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/national-mall-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 295, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 4.5, "coordinates": {"latitude": 38.889552,
+        "longitude": -77.023089}, "transactions": [], "location": {"address1": "Constitution
+        Ave NW", "address2": "", "address3": "", "city": "Washington, DC", "zip_code":
+        "20565", "country": "US", "state": "DC", "display_address": ["Constitution
+        Ave NW", "Washington, DC 20565"]}, "phone": "+12024859880", "display_phone":
+        "(202) 485-9880", "distance": 1472.514556936}, {"id": "komi-washington", "name":
+        "Komi", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/C5ejNJevyU_pqGRzS7kVfQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/komi-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 669, "categories": [{"alias": "greek", "title": "Greek"},
+        {"alias": "mediterranean", "title": "Mediterranean"}], "rating": 4.5, "coordinates":
+        {"latitude": 38.91011, "longitude": -77.03819}, "transactions": ["restaurant_reservation"],
+        "price": "$$$$", "location": {"address1": "1509 17th St NW", "address2": null,
+        "address3": "", "city": "Washington, DC", "zip_code": "20036", "country":
+        "US", "state": "DC", "display_address": ["1509 17th St NW", "Washington, DC
+        20036"]}, "phone": "+12023329200", "display_phone": "(202) 332-9200", "distance":
+        1386.4128713544}, {"id": "un-je-ne-sais-quoi-washington", "name": "Un Je Ne
+        Sais Quoi", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/RU2A3Xf_0QcFCz8f4aSLpg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/un-je-ne-sais-quoi-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 344, "categories": [{"alias": "desserts", "title": "Desserts"},
+        {"alias": "cafes", "title": "Cafes"}, {"alias": "bakeries", "title": "Bakeries"}],
+        "rating": 4.5, "coordinates": {"latitude": 38.9087384, "longitude": -77.042577},
+        "transactions": [], "price": "$", "location": {"address1": "1361 Connecticut
+        Ave NW", "address2": "", "address3": "", "city": "Washington, DC", "zip_code":
+        "20036", "country": "US", "state": "DC", "display_address": ["1361 Connecticut
+        Ave NW", "Washington, DC 20036"]}, "phone": "+12027210099", "display_phone":
+        "(202) 721-0099", "distance": 1345.1942782469998}, {"id": "greek-deli-and-catering-washington",
+        "name": "Greek Deli & Catering", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/s5k9SEf22XFJ4BJRmykwXA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/greek-deli-and-catering-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 462, "categories": [{"alias": "delis", "title": "Delis"},
+        {"alias": "greek", "title": "Greek"}, {"alias": "breakfast_brunch", "title":
+        "Breakfast & Brunch"}], "rating": 4.5, "coordinates": {"latitude": 38.904731,
+        "longitude": -77.043876}, "transactions": [], "price": "$", "location": {"address1":
+        "1120 19th St NW", "address2": "", "address3": "", "city": "Washington, DC",
+        "zip_code": "20036", "country": "US", "state": "DC", "display_address": ["1120
+        19th St NW", "Washington, DC 20036"]}, "phone": "+12022962111", "display_phone":
+        "(202) 296-2111", "distance": 1009.3183414859999}, {"id": "poke-papa-washington",
+        "name": "Poke Papa", "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/cbshNdNxKoQuZ056HCksJw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/poke-papa-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 383, "categories": [{"alias": "poke", "title": "Poke"}, {"alias":
+        "hawaiian", "title": "Hawaiian"}], "rating": 4.5, "coordinates": {"latitude":
+        38.89965, "longitude": -77.02329}, "transactions": [], "price": "$$", "location":
+        {"address1": "806 H St NW", "address2": "", "address3": null, "city": "Washington,
+        DC", "zip_code": "20001", "country": "US", "state": "DC", "display_address":
+        ["806 H St NW", "Washington, DC 20001"]}, "phone": "+12023937653", "display_phone":
+        "(202) 393-7653", "distance": 1154.476464268}, {"id": "bub-and-pops-washington",
+        "name": "Bub and Pop''s", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/SJAemF6wVRxr1cFBzWxJ3w/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/bub-and-pops-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 612, "categories": [{"alias": "sandwiches", "title": "Sandwiches"},
+        {"alias": "tradamerican", "title": "American (Traditional)"}, {"alias": "delis",
+        "title": "Delis"}], "rating": 4.5, "coordinates": {"latitude": 38.906029,
+        "longitude": -77.042368}, "transactions": ["delivery", "pickup"], "price":
+        "$$", "location": {"address1": "1815 M St NW", "address2": null, "address3":
+        "", "city": "Washington, DC", "zip_code": "20036", "country": "US", "state":
+        "DC", "display_address": ["1815 M St NW", "Washington, DC 20036"]}, "phone":
+        "+12024571111", "display_phone": "(202) 457-1111", "distance": 1056.0219354616},
+        {"id": "minibar-by-jos\u00e9-andr\u00e9s-washington-7", "name": "minibar by
+        Jos\u00e9 Andr\u00e9s", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/cJQC06P22Tv2FaYsi4iswA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/minibar-by-jos%C3%A9-andr%C3%A9s-washington-7?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 286, "categories": [{"alias": "newamerican", "title": "American
+        (New)"}, {"alias": "cocktailbars", "title": "Cocktail Bars"}], "rating": 4.5,
+        "coordinates": {"latitude": 38.89633, "longitude": -77.02345}, "transactions":
+        [], "price": "$$$$", "location": {"address1": "855 E St NW", "address2": "",
+        "address3": "", "city": "Washington, DC", "zip_code": "20004", "country":
+        "US", "state": "DC", "display_address": ["855 E St NW", "Washington, DC 20004"]},
+        "phone": "+12023930812", "display_phone": "(202) 393-0812", "distance": 1126.197544123},
+        {"id": "fords-theatre-washington", "name": "Ford''s Theatre", "image_url":
+        "https://s3-media3.fl.yelpcdn.com/bphoto/yu4TEzI5gXbyEoYItFpIzQ/o.jpg", "is_closed":
+        false, "url": "https://www.yelp.com/biz/fords-theatre-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 342, "categories": [{"alias": "theater", "title": "Performing
+        Arts"}, {"alias": "landmarks", "title": "Landmarks & Historical Buildings"},
+        {"alias": "museums", "title": "Museums"}], "rating": 4.5, "coordinates": {"latitude":
+        38.8966751098633, "longitude": -77.0256576538086}, "transactions": [], "location":
+        {"address1": "511 10th St NW", "address2": "", "address3": "", "city": "Washington,
+        DC", "zip_code": "20004", "country": "US", "state": "DC", "display_address":
+        ["511 10th St NW", "Washington, DC 20004"]}, "phone": "+12023474833", "display_phone":
+        "(202) 347-4833", "distance": 942.9551949109999}, {"id": "poki-district-washington",
+        "name": "Poki District", "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/0VR7lXrBWAGDnL-kaFmrpw/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/poki-district-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 164, "categories": [{"alias": "poke", "title": "Poke"}, {"alias":
+        "hawaiian", "title": "Hawaiian"}], "rating": 4.5, "coordinates": {"latitude":
+        38.8972820910296, "longitude": -77.0245850422897}, "transactions": [], "price":
+        "$$", "location": {"address1": "906 F St NW", "address2": "", "address3":
+        null, "city": "Washington, DC", "zip_code": "20004", "country": "US", "state":
+        "DC", "display_address": ["906 F St NW", "Washington, DC 20004"]}, "phone":
+        "", "display_phone": "", "distance": 1032.35781386}, {"id": "thomas-jefferson-memorial-washington",
+        "name": "Thomas Jefferson Memorial", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/X_842o9mAw-jpDHhsVGStg/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/thomas-jefferson-memorial-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 257, "categories": [{"alias": "landmarks", "title": "Landmarks
+        & Historical Buildings"}], "rating": 4.5, "coordinates": {"latitude": 38.8814231245037,
+        "longitude": -77.0364868597174}, "transactions": [], "location": {"address1":
+        "900 Ohio Dr SW", "address2": "", "address3": "", "city": "Washington, DC",
+        "zip_code": "20242", "country": "US", "state": "DC", "display_address": ["900
+        Ohio Dr SW", "Washington, DC 20242"]}, "phone": "+12024266841", "display_phone":
+        "(202) 426-6841", "distance": 1809.95308237}, {"id": "joes-seafood-prime-steak-and-stone-crab-washington",
+        "name": "Joe''s Seafood, Prime Steak & Stone Crab", "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/qytXjs_MWond0QL0usI9RA/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/joes-seafood-prime-steak-and-stone-crab-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 771, "categories": [{"alias": "seafood", "title": "Seafood"},
+        {"alias": "steak", "title": "Steakhouses"}, {"alias": "breakfast_brunch",
+        "title": "Breakfast & Brunch"}], "rating": 4.0, "coordinates": {"latitude":
+        38.9000975754609, "longitude": -77.0337614773155}, "transactions": [], "price":
+        "$$$", "location": {"address1": "750 15th St NW", "address2": "", "address3":
+        "", "city": "Washington, DC", "zip_code": "20005", "country": "US", "state":
+        "DC", "display_address": ["750 15th St NW", "Washington, DC 20005"]}, "phone":
+        "+12024890140", "display_phone": "(202) 489-0140", "distance": 356.56585320199997},
+        {"id": "fogo-de-ch\u00e3o-brazilian-steakhouse-washington-5", "name": "Fogo
+        de Ch\u00e3o Brazilian Steakhouse", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/gP_VzEPD5-r1f8vK7xvYuQ/o.jpg",
+        "is_closed": false, "url": "https://www.yelp.com/biz/fogo-de-ch%C3%A3o-brazilian-steakhouse-washington-5?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "review_count": 1497, "categories": [{"alias": "brazilian", "title": "Brazilian"},
+        {"alias": "steak", "title": "Steakhouses"}], "rating": 4.0, "coordinates":
+        {"latitude": 38.8951162456108, "longitude": -77.0273284769837}, "transactions":
+        ["restaurant_reservation"], "price": "$$$", "location": {"address1": "1101
+        Pennsylvania Ave NW", "address2": "", "address3": "", "city": "Washington,
+        DC", "zip_code": "20004", "country": "US", "state": "DC", "display_address":
+        ["1101 Pennsylvania Ave NW", "Washington, DC 20004"]}, "phone": "+12023474668",
+        "display_phone": "(202) 347-4668", "distance": 844.127717653}], "total": 14584,
+        "region": {"center": {"longitude": -77.0365, "latitude": 38.8977}}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:08:01 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/bul-washington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 7ba68b60e869234c
+      X-Proxied:
+      - 10-65-16-149-useast1bprod
+      Content-Length:
+      - '1616'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:17:10 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17730-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"id": "bul-washington", "name": "Bul", "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/AcYacjW7k-tg-_UGvvCRmg/o.jpg",
+        "is_claimed": true, "is_closed": false, "url": "https://www.yelp.com/biz/bul-washington?adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_lookup&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "phone": "+12027333921", "display_phone": "(202) 733-3921", "review_count":
+        236, "categories": [{"alias": "korean", "title": "Korean"}, {"alias": "bars",
+        "title": "Bars"}], "rating": 4.0, "location": {"address1": "2431 18th St NW",
+        "address2": "", "address3": "", "city": "Washington, DC", "zip_code": "20009",
+        "country": "US", "state": "DC", "display_address": ["2431 18th St NW", "Washington,
+        DC 20009"], "cross_streets": "N Columbia Rd & N Adams Mill Rd"}, "coordinates":
+        {"latitude": 38.921250049015, "longitude": -77.0419890467348}, "photos": ["https://s3-media4.fl.yelpcdn.com/bphoto/rme-xLwHQ6y5ZjEE_5JYyg/o.jpg",
+        "https://s3-media2.fl.yelpcdn.com/bphoto/tkCQGfZG1IK9mz9s_xkbEg/o.jpg", "https://s3-media2.fl.yelpcdn.com/bphoto/QenRkRY_GfLCYt-rph44bA/o.jpg"],
+        "price": "$$", "hours": [{"open": [{"is_overnight": false, "start": "1730",
+        "end": "2230", "day": 1}, {"is_overnight": false, "start": "1730", "end":
+        "2230", "day": 2}, {"is_overnight": false, "start": "1730", "end": "2230",
+        "day": 3}, {"is_overnight": true, "start": "1730", "end": "0200", "day": 4},
+        {"is_overnight": true, "start": "1630", "end": "0200", "day": 5}, {"is_overnight":
+        false, "start": "1630", "end": "2200", "day": 6}], "hours_type": "REGULAR",
+        "is_open_now": true}], "transactions": []}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:17:10 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/---bul-washington
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 462280d945f9a771
+      X-Proxied:
+      - extlb5-r7-iad1
+      Content-Length:
+      - '102'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:17:44 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17720-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "BUSINESS_NOT_FOUND", "description": "The requested
+        business could not be found."}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:17:44 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/invalid-yelp-uid
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 2d32590c25885005
+      X-Proxied:
+      - 10-65-16-149-useast1bprod
+      Content-Length:
+      - '102'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:18:24 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17741-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "BUSINESS_NOT_FOUND", "description": "The requested
+        business could not be found."}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:18:24 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/bul-washington/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - c71acdb69322e9f0
+      X-Proxied:
+      - extlb5-r7-iad1
+      Content-Length:
+      - '1714'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:18:45 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17744-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"reviews": [{"url": "https://www.yelp.com/biz/bul-washington?hrid=qsOSe7ZJVEKcriyWogXfwg&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "A more modern take on a Korean bar in the heart of Adam''s Morgan.\n\nI
+        absolutely love the vibe of this place, from the lighting to the wide variety
+        of people...", "rating": 5, "user": {"image_url": "https://s3-media4.fl.yelpcdn.com/photo/Zv6q8qJupeksWhKaDJBroA/o.jpg",
+        "name": "Cee K."}, "time_created": "2017-10-18 23:01:07"}, {"url": "https://www.yelp.com/biz/bul-washington?hrid=pEbRBBOEs237lqBdy1Vqxg&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "They don''t take reservations on Fridays or Saturdays between 7-9pm.
+        We arrived around 7:45 and there were a couple free tables. By 8 the place
+        was filling...", "rating": 5, "user": {"image_url": "https://s3-media2.fl.yelpcdn.com/photo/rTTTFtVPg8Qa2BoyFJxP1w/o.jpg",
+        "name": "Natalie M."}, "time_created": "2017-10-08 07:52:50"}, {"url": "https://www.yelp.com/biz/bul-washington?hrid=P2vwxnK_eUtmZOHkun3vDQ&adjust_creative=ZfziXConRDv81b8gfdoynQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_reviews&utm_source=ZfziXConRDv81b8gfdoynQ",
+        "text": "Overpriced , terrible service \n\nFood nothing  special. \n\nOverpriced    I
+        was there by myself.  Asked for a recommendation.   Was told to order the
+        grilled...", "rating": 1, "user": {"image_url": "https://s3-media3.fl.yelpcdn.com/photo/9mhhI_A0anNd_kdFsClVVw/o.jpg",
+        "name": "Reza I."}, "time_created": "2017-10-01 17:12:11"}], "total": 236,
+        "possible_languages": ["en", "ja"]}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:18:45 GMT
+- request:
+    method: get
+    uri: https://api.yelp.com/v3/businesses/invalid-yelp-uid/reviews
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.13.1
+      Authorization:
+      - Bearer 3nxqF9XG0azr4wNhdDzEAXaZDBPRqmDUQ-rt3nT95ff2p10cjKvWMWtzDm1qTa5ewg0hhNPQnpJy_O0AZ0SBm02GK6nnvn3EvYcfl8RlO4Ek2flMnGxUwWTPWLDWWXYx
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Server:
+      - nginx
+      Content-Type:
+      - application/json
+      X-Zipkin-Id:
+      - 463054ed7b120410
+      X-Proxied:
+      - 10-65-16-149-useast1bprod
+      Content-Length:
+      - '102'
+      Accept-Ranges:
+      - bytes
+      Date:
+      - Sun, 22 Oct 2017 00:18:45 GMT
+      Via:
+      - 1.1 varnish
+      Connection:
+      - keep-alive
+      X-Served-By:
+      - cache-dca17746-DCA
+      X-Cache:
+      - MISS
+      X-Cache-Hits:
+      - '0'
+    body:
+      encoding: UTF-8
+      string: '{"error": {"code": "BUSINESS_NOT_FOUND", "description": "The requested
+        business could not be found."}}'
+    http_version: 
+  recorded_at: Sun, 22 Oct 2017 00:18:45 GMT
+recorded_with: VCR 3.0.3

@@ -7,9 +7,9 @@ Rails.application.routes.draw do
   end
 
   # Yelp api wrapper
-  get "yelp" => "yelp#index"
-  get "yelp/:id" => "yelp#show"
-  get "yelp/:id/reviews" => "yelp/reviews#index"
+  get "yelp"             => "yelp#businesses", as: :yelp_businesses
+  get "yelp/:id"         => "yelp#business",   as: :yelp_business
+  get "yelp/:id/reviews" => "yelp#reviews",    as: :yelp_business_reviews
 
   # Custom api
   namespace :v1 do

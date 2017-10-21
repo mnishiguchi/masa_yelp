@@ -28,25 +28,53 @@
 
 FactoryGirl.define do
   factory :business do
-    yelp_uid "riveras-restaurant-springfield"
-    name "Rivera's Restaurant"
-    image_url "https://s3-media2.fl.yelpcdn.com/bphoto/H8wFZ9qfAimkGR1OSyUVCg/o.jpg"
-    url "https://www.yelp.com/biz/riveras-restaurant-springfield"
-    categories { [{ alias: "latin", title: "Latin American" }] }
+    yelp_uid { Faker::Crypto.md5 }
+    name { Faker::Company.name }
+    image_url "https://s3-media3.fl.yelpcdn.com/bphoto/AcYacjW7k-tg-_UGvvCRmg/o.jpg"
+    url "https://www.yelp.com/biz/bul-washington"
+    categories "korean,bars"
     rating 4.0
-    price "$$"
-    phone "+17034515344"
-    display_phone "(703) 451-5344"
-    coordinates { { latitude: 38.7772099, longitude: -77.18436 } }
-    location do
-      { address1: "6552 Backlick Rd",
-        address2: "",
-        address3: "",
-        city: "Springfield",
-        zip_code: "22150",
-        country: "US",
-        state: "VA",
-        display_address: ["6552 Backlick Rd", "Springfield, VA 22150"] }
+    price 2
+    phone "+12027333921"
+    display_phone "(202) 733-3921"
+    latitude 38.8977
+    longitude(-77.0365)
+    address1 "1600 Pennsylvania Ave NW"
+    address2 ""
+    address3 ""
+    city "Washington, DC"
+    zip_code "20500"
+    country "US"
+    state "DC"
+    display_address do
+      [
+        "1600 Pennsylvania Ave NW",
+        "Washington, DC 20500"
+      ]
+    end
+
+    trait :lincoln_memorial do
+      latitude 38.8893
+      longitude(-77.0502)
+      city "Washington, DC"
+      state "DC"
+      zip_code "20037"
+    end
+
+    trait :reston_va do
+      latitude 38.9586
+      longitude(-77.3570)
+      city "Reston"
+      state "VA"
+      zip_code "20190"
+    end
+
+    trait :leesburg_va do
+      latitude 39.1157
+      longitude(-77.5636)
+      city "Leesburg"
+      state"VA"
+      zip_code "20176"
     end
   end
 end

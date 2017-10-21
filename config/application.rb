@@ -42,7 +42,7 @@ module MasaYelp
                        helper_specs: false,
                        routing_specs: false,
                        controller_specs: false,
-                       request_specs: false
+                       request_specs: true
     end
   end
 end
