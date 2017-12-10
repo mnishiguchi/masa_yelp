@@ -24,7 +24,7 @@ module V1
       if business.present?
         render json: business.surrealize(camelize: true), status: :ok
       else
-        render json: nil, status: :not_found
+        respond_with_not_found
       end
     end
 

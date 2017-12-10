@@ -26,23 +26,8 @@ module Yelp
 
     def request(type, params)
       types = Yelp::Client.request_types
-      unless types.include?(type)
-        return {
-          error: {
-            code: "MASA_YELP",
-            description: "Request type must be one of #{types}."
-          }
-        }
-      end
-
-      if params.blank?
-        return {
-          error: {
-            code: "MASA_YELP",
-            description: "Please provide supported params."
-          }
-        }
-      end
+      return build_error_hash("Request type must be one of #{types}.") unless types.include?(type)
+      return build_error_hash("Please provide supported params.") if params.blank?
 
       send("request_#{type}", params).deep_symbolize_keys
     end
@@ -104,6 +89,10 @@ module Yelp
       %w[YELP_API_KEY YELP_API_SECRET].each do |var|
         raise ArgumentError, "Set up your #{var} environment var." if ENV[var].blank?
       end
+    end
+
+    def build_error_hash(description)
+      { error: { code: "MASA_YELP", description: description } }
     end
   end
 end
