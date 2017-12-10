@@ -24,7 +24,10 @@ gem "puma", "~> 3.7"
 # gem 'capistrano-rails', group: :development
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-gem "rack-cors", require: "rack/cors"
+gem "rack-cors"
+gem "rack-attack"
+gem "rack-attack-rate-limit", require: "rack/attack/rate-limit"
+gem "redis-rails"
 
 # HTTP
 gem "faraday"
@@ -47,14 +50,14 @@ gem "ransack", github: "activerecord-hackery/ransack"
 group :development, :test do
   gem "database_cleaner"
   gem "dotenv-rails"
-  gem "factory_girl_rails"
+  gem "factory_bot_rails"
   gem "faker"
   gem "guard-rspec", require: false
   gem "pry-byebug"
   gem "pry-rails"
   gem "pry"
   gem "rspec-rails"
-  gem "shoulda-matchers", git: "https://github.com/thoughtbot/shoulda-matchers.git", branch: "rails-5"
+  gem "shoulda-matchers"
   gem "vcr"
   gem "webmock"
 end

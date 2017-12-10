@@ -26,7 +26,7 @@
 #  updated_at      :datetime         not null
 #
 
-FactoryGirl.define do
+FactoryBot.define do
   factory :business do
     yelp_uid { Faker::Crypto.md5 }
     name { Faker::Company.name }

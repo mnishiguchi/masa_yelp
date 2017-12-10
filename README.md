@@ -1,7 +1,7 @@
 # MASA YELP
 
 - A Yelp API server powered by [Yelp Business APIs (v3)](https://www.yelp.com/developers/documentation/v3).
-- Authenticated users can save businesses they like.
+- JSON Keys are camel-cased as opposed to the original being snake-cased.
 
 ## Available APIs
 - [Yelp Business APIs (v3)](https://www.yelp.com/developers/documentation/v3).
@@ -39,6 +39,7 @@
   + https://masa-yelp.herokuapp.com/v1/businesses/bul-washington
   + https://masa-yelp.herokuapp.com/v1/businesses/bul-washington/reviews
   + https://masa-yelp.herokuapp.com/v1/businesses?q[rating_gt]=3
+  + https://masa-yelp.herokuapp.com/v1/businesses?q[rating_gt]=3&q[s]=rating+desc
   + https://masa-yelp.herokuapp.com/v1/businesses?q[price_lt]=3
   + https://masa-yelp.herokuapp.com/v1/businesses?q[categories_cont]=bbq
   + https://masa-yelp.herokuapp.com/v1/businesses?location=white-house
@@ -48,6 +49,3 @@
   + https://masa-yelp.herokuapp.com/v1/businesses?per_page=3
 
 ![](erd.jpg)
-
-## Response JSON format
-- Keys are camel-cased as opposed to the original being snake-cased.
